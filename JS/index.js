@@ -130,5 +130,16 @@ app.get("/documentation", (req, res) => {
     res.sendFile("Public/documentation.html", { root: __dirname });
   });
 
+//function to log all errors that occur
+
+const bodyParser = require('body-parser'),
+methodOverride = require('method-override');
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
+app.use(methodOverride());
 
 
