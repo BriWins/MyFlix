@@ -1,3 +1,5 @@
 # Flix It Up App
 
-This is an API that will allow users to register/unregister an account, login to their account, add movies to their favorites list, remove movies from their favorites list, view directors, view movie genres, and much much more!
+Flix It Up application will provide users with access to information about different
+movies, directors, and genres. Users will be able to sign up, update their
+personal information, and create a list of their favorite movies.
