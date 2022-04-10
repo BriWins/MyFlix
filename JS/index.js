@@ -144,7 +144,7 @@ app.use(methodOverride());
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send("UH-OH! Somthing broke!");
+    res.status(500).send("UH-OH! Something broke!");
 });
 
 
