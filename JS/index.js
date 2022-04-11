@@ -151,6 +151,13 @@ app.post("/users/register", (req,res) => {
     }
 });
 
+//returns movie by filtering data by genre
+
+app.get("/movies/:genres", (req, res) => {
+    res.json(movies.find((genres) => {
+        return movies.genres === req.params.genres
+}));
+    
 app.get("/documentation", (req, res) => {                  
     res.sendFile("Public/documentation.html", { root: __dirname });
   });
