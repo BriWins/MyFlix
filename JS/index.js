@@ -119,22 +119,43 @@ const topMovies = [
         directorPOD:"Cottonwood, Arizona", //POD-director's place of death 
         movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
     },
-     
 ]
 
-app.get("/", (req, res) => {
-  res.send("Welcome! Let's Flix It Up!");
-});
 
-app.get('/movies', (req, res) => {
+//returns list of all movies
+
+app.get("/movies", (req, res) => {
     res.json(topMovies);
   });
+  
+//allows single movie to be searched by title
+
+app.get("/movies/:title", (req, res) => {
+   res.json(movies.find((movies) => {
+       return movies.name === req.params.name
+   }));
+});
+
+//allows new user to register an account
+
+app.post("/users/register", (req,res) => {
+    let newUsers = req.body;
+    
+    if (!newUsers.name) {
+        const message = "Missing name for account.";
+        res.status(400).send(message);
+    } else {
+        newUsers.id = uuid.v4();
+        newUsers.push(newUsers);
+        res.status(201).send(newUsers);
+    }
+});
 
 app.get("/documentation", (req, res) => {                  
     res.sendFile("Public/documentation.html", { root: __dirname });
   });
 
-//function to log all errors that occur
+//function to log all errors
 
 const bodyParser = require('body-parser'),
 methodOverride = require('method-override');
