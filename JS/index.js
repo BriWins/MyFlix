@@ -136,6 +136,19 @@ app.get("/movies/:title", (req, res) => {
    }));
 });
 
+//allows user to add movie to favorite list
+
+app.post("/movies/:users/favorites", (req,res) => {
+  res.status(201);
+  res.send("The movie has been added to favorites list.");
+});
+
+//allows user to remove movie from favorite list
+
+app.delete("/movies/:users/favorites", (req,res) => {
+  res.send("The movie has been removed from favorites list.");
+});
+
 //allows new user to register an account
 
 app.post("/users/register", (req,res) => {
