@@ -164,6 +164,23 @@ app.post("/users/register", (req,res) => {
     }
 });
 
+//allows user to delete their account
+
+app.delete("/users/:users", (req, res) => {
+  res.send("Your account has been removed");
+});
+
+//allows user to update their account
+
+app.put("/users/:users", (req, res) => {
+  res.send("Your account has been updated.");
+});
+
+// //Return data about a director (bio, birth year, death year) by name
+app.get("/movies/directors/:names", (req, res) => {
+  res.send("Details about the director: " + req.params.name);
+});
+
 //returns movie by filtering data by genre
 
 app.get("/movies/:genres", (req, res) => {
