@@ -151,4 +151,6 @@ app.use((err, req, res, next) => {
     res.status(500).send("UH-OH! Something broke!");
 });
 
-
+app.listen(5500, () => {
+     console.log('Your app is listening on port 5500.');
+});
