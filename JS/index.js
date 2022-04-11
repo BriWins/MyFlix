@@ -126,6 +126,10 @@ app.get("/", (req, res) => {
   res.send("Welcome! Let's Flix It Up!");
 });
 
+app.get('/movies', (req, res) => {
+    res.json(topMovies);
+  });
+
 app.get("/documentation", (req, res) => {                  
     res.sendFile("Public/documentation.html", { root: __dirname });
   });
