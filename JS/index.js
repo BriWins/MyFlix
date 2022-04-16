@@ -61,12 +61,12 @@ const topMovies = [
     },
     {
         movieTitle: "Spider-Man: Into the Spider-Verse (2018)",
-        director:"Peter Ramsey, Bob Persichetti Jr., Rodney Rothman",
+        director:"Peter Ramsey",
         movieRelease:"December 14, 2018",
         genre: "Adventure",
-        directorDOB: "December 23, 1962, January 17, 1973, Not Available",
-        directorPOB: "Crenshaw, California, Not Available, Queens, New York",   
-        directorDOD: "N/A, N/A, N/A", 
+        directorDOB: "December 23, 1962",
+        directorPOB: "Crenshaw, California",   
+        directorDOD: "N/A", 
         movieInfo:"A 2018 American computer-animated super hero film featuring the Marvel Comics character, Spider-Man."
     },
     {
