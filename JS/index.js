@@ -9,11 +9,11 @@ app.use(morgan("common"));
 app.use(express.static("public"));
 
 const topMovies = [
-    {
+   {
         movieTitle: "Black Panther",
         director: "Ryan Coogler",
         movieRelease: "February 16, 2018", //Release date for theaters
-        genre: "Action, Adventure",
+        genre: "Adventure",
         directorDOB: "May 23, 1986", //DOB- director's date of birth
         directorPOB: "Oakland, CA",   //POB-director's place of birth
         directorDOD: "N/A", //DOD-director's date of death
@@ -23,7 +23,7 @@ const topMovies = [
         movieTitle: "Mad Max: Fury Road(2015)",
         director:"George Miller",
         movieRelease: "March 3, 1945",
-        genre: "Action, Adventure",
+        genre: "Adventure",
         directorDOB: "May 23, 1986",
         directorPOB: "Chinchilla,Queensland, Australia",   
         directorDOD: "N/A", 
@@ -43,7 +43,7 @@ const topMovies = [
         movieTitle: "Lady Bird",
         director:"Greta Celeste Gerwig",
         movieRelease:"November 22, 2017",
-        genre: "Drama, Comedy",
+        genre: "Comedy",
         directorDOB: "August 4, 1983",
         directorPOB: "Sacramento, California",   
         directorDOD: "N/a", 
@@ -53,7 +53,7 @@ const topMovies = [
         movieTitle: "Inception(2010)",
         director:"Christopher Nolan",
         movieRelease:"July 16, 2010",
-        genre: "Action, Mystery, Thriller, Sci-Fi", // Sci-Fi is science fiction
+        genre: "Sci-Fi", // Sci-Fi is science fiction
         directorDOB: "July 30, 1970",
         directorPOB: "London, England",   
         directorDOD: "N/A", 
@@ -63,7 +63,7 @@ const topMovies = [
         movieTitle: "Spider-Man: Into the Spider-Verse (2018)",
         director:"Peter Ramsey, Bob Persichetti Jr., Rodney Rothman",
         movieRelease:"December 14, 2018",
-        genre: "Animation, Comedy, Fantasy, Kids & Family, Adventure, Action",
+        genre: "Adventure",
         directorDOB: "December 23, 1962, January 17, 1973, Not Available",
         directorPOB: "Crenshaw, California, Not Available, Queens, New York",   
         directorDOD: "N/A, N/A, N/A", 
@@ -73,7 +73,7 @@ const topMovies = [
         movieTitle: "The Godfather (1972)",
         director:"Francis Ford Coppola",
         movieRelease:"March 15, 1972",
-        genre: "Drama, Crime",
+        genre: "Drama",
         directorDOB: "April 7, 1939",
         directorPOB: "Detroit, Michigan",   
         directorDOD: "N/A", 
@@ -83,7 +83,7 @@ const topMovies = [
         movieTitle: "The Lion King(1994)",
         director:"Roger Allers, Rob Minkoff",
         movieRelease:"June 24, 1994",
-        genre: "Musical, Animation, Adventure, Kids & Family",
+        genre: "Animation",
         directorDOB: "June 29, 1949, August 11, 1962",
         directorPOB: "Rye, New York, Palo Alto, California",   
         directorDOD: "N/A,N/A", 
@@ -93,7 +93,7 @@ const topMovies = [
         movieTitle: "The Shining(1980)",
         director:"Stanley Kubrick",
         movieRelease:"May 23, 1980",
-        genre: "Horror, Mystery, Thriller",
+        genre: "Thriller",
         directorDOB: "July, 26, 1928",
         directorPOB: "Bronx, New York",   
         directorDOD: "N/A", 
@@ -103,7 +103,7 @@ const topMovies = [
         movieTitle: "The Wizard Of Oz (1939)",
         director:"Victor Fleming",
         movieRelease:"August 25, 1939",
-        genre: "Musical, Fantasy",
+        genre: "Musical",
         directorDOB: "February 23, 1889",
         directorPOB: "La Canada, California",   
         directorDOD: "January 6, 1949",
