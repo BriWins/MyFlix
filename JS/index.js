@@ -117,7 +117,6 @@ const topMovies = [
         directorDOB: "February 23, 1889",
         directorPOB: "La Canada, California",   
         directorDOD: "January 6, 1949",
-        directorPOD:"Cottonwood, Arizona", //POD-director's place of death 
         movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
     },
     {
@@ -129,7 +128,6 @@ const topMovies = [
       directorDOB: "February 23, 1889",
       directorPOB: "La Canada, California",   
       directorDOD: "January 6, 1949",
-      directorPOD:"Cottonwood, Arizona", 
       movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
   },
      
