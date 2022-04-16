@@ -81,12 +81,12 @@ const topMovies = [
     },
     {
         movieTitle: "The Lion King(1994)",
-        director:"Roger Allers, Rob Minkoff",
+        director:"Rob Minkoff",
         movieRelease:"June 24, 1994",
         genre: "Animation",
-        directorDOB: "June 29, 1949, August 11, 1962",
-        directorPOB: "Rye, New York, Palo Alto, California",   
-        directorDOD: "N/A,N/A", 
+        directorDOB: "August 11, 1962",
+        directorPOB: "Palo Alto, California",   
+        directorDOD: "N/A", 
         movieInfo:"A Disney animated feature follows the adventures of the young lion, Simba, the heir of his father, Mufasa. Simba's father is killed by a stampede, but Simba's uncle Scar was behind his father's death. Now an adult, Simba returns home to take back his homeland."
     },
     {
