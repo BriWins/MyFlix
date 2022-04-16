@@ -101,7 +101,7 @@ const topMovies = [
     },
     {
         movieTitle: "The Wizard Of Oz (1939)",
-        director:"Victor Flemings",
+        director:"Victor Fleming",
         movieRelease:"August 25, 1939",
         genre: "Musical, Fantasy",
         directorDOB: "February 23, 1889",
@@ -110,6 +110,17 @@ const topMovies = [
         directorPOD:"Cottonwood, Arizona", //POD-director's place of death 
         movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
     },
+    {
+      movieTitle: "Gone With The Wind (1939)",
+      director:"Victor Fleming",
+      movieRelease:"August 25, 1939",
+      genre: "Drama",
+      directorDOB: "February 23, 1889",
+      directorPOB: "La Canada, California",   
+      directorDOD: "January 6, 1949",
+      directorPOD:"Cottonwood, Arizona", 
+      movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
+  },
      
 ]
 
