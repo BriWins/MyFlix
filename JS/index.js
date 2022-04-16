@@ -9,9 +9,10 @@ app.use(morgan("common"));
 app.use(express.static("public"));
 
 const topMovies = [
-   {
+    {
         movieTitle: "Black Panther",
         director: "Ryan Coogler",
+        bio:"Ryan Kyle Coogler is an African-American filmmaker and producer who is from Oakland, California.",
         movieRelease: "February 16, 2018", //Release date for theaters
         genre: "Adventure",
         directorDOB: "May 23, 1986", //DOB- director's date of birth
@@ -22,6 +23,7 @@ const topMovies = [
     {
         movieTitle: "Mad Max: Fury Road(2015)",
         director:"George Miller",
+        bio: "George Miller is an Australian film director, screenwriter, producer, and former medical doctor.",
         movieRelease: "March 3, 1945",
         genre: "Adventure",
         directorDOB: "May 23, 1986",
@@ -32,6 +34,7 @@ const topMovies = [
     {
         movieTitle: "Braidsmaids(2011)",
         director:"Paul Feig",
+        bio:"Paul Samuel Feig is an American actor, comedian and filmmaker.",
         movieRelease:"May 13, 2011",
         genre: "Comedy",
         directorDOB: "September 17, 1962",
@@ -42,6 +45,7 @@ const topMovies = [
     {
         movieTitle: "Lady Bird",
         director:"Greta Celeste Gerwig",
+        bio:"Greta Celeste Gerwig is an American actress, writer, and director.",
         movieRelease:"November 22, 2017",
         genre: "Comedy",
         directorDOB: "August 4, 1983",
@@ -52,6 +56,7 @@ const topMovies = [
     {
         movieTitle: "Inception(2010)",
         director:"Christopher Nolan",
+        bio:"Christopher Nolan is a British-American film director, producer, and screenwriter.",
         movieRelease:"July 16, 2010",
         genre: "Sci-Fi", // Sci-Fi is science fiction
         directorDOB: "July 30, 1970",
@@ -62,6 +67,7 @@ const topMovies = [
     {
         movieTitle: "Spider-Man: Into the Spider-Verse (2018)",
         director:"Peter Ramsey",
+        bio:"Peter A. Ramsey is an American illustrator, storyboard artist, story artist, film director, and film producer.",
         movieRelease:"December 14, 2018",
         genre: "Adventure",
         directorDOB: "December 23, 1962",
@@ -72,6 +78,7 @@ const topMovies = [
     {
         movieTitle: "The Godfather (1972)",
         director:"Francis Ford Coppola",
+        bio:"Francis Ford Coppola is an American film director, producer, and screenwriter.",
         movieRelease:"March 15, 1972",
         genre: "Drama",
         directorDOB: "April 7, 1939",
@@ -82,6 +89,7 @@ const topMovies = [
     {
         movieTitle: "The Lion King(1994)",
         director:"Rob Minkoff",
+        bio:"Robert Ralph (Rob) Minkoff is an American director, screenwriter, producer and animator.",
         movieRelease:"June 24, 1994",
         genre: "Animation",
         directorDOB: "August 11, 1962",
@@ -92,16 +100,18 @@ const topMovies = [
     {
         movieTitle: "The Shining(1980)",
         director:"Stanley Kubrick",
+        bio:"Stanley Kubrick was an American film director, producer, screenwriter, and photographer.",
         movieRelease:"May 23, 1980",
         genre: "Thriller",
         directorDOB: "July, 26, 1928",
         directorPOB: "Bronx, New York",   
-        directorDOD: "N/A", 
+        directorDOD: "March 7, 1999", 
         movieInfo:"A murderer is hell bent on terrorizing Jack Torrance's family as a hotel's dark secrets unravel."
     },
     {
         movieTitle: "The Wizard Of Oz (1939)",
         director:"Victor Fleming",
+        bio:"Victor Lonzo Fleming was an American film director, cinematographer, and producer.",
         movieRelease:"August 25, 1939",
         genre: "Musical",
         directorDOB: "February 23, 1889",
@@ -113,6 +123,7 @@ const topMovies = [
     {
       movieTitle: "Gone With The Wind (1939)",
       director:"Victor Fleming",
+      bio:"Victor Lonzo Fleming was an American film director, cinematographer, and producer.",
       movieRelease:"August 25, 1939",
       genre: "Drama",
       directorDOB: "February 23, 1889",
