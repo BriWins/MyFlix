@@ -12,7 +12,6 @@ const topMovies = [
     {
         movieTitle: "Black Panther",
         director: "Ryan Coogler",
-        producer: "Kevin Feige, David J. Grant",
         movieRelease: "February 16, 2018", //Release date for theaters
         genre: "Action, Adventure",
         directorDOB: "May 23, 1986", //DOB- director's date of birth
@@ -23,7 +22,6 @@ const topMovies = [
     {
         movieTitle: "Mad Max: Fury Road(2015)",
         director:"George Miller",
-        producer: "Doug Mitchell, George Miller, P. J. Veoten",
         movieRelease: "March 3, 1945",
         genre: "Action, Adventure",
         directorDOB: "May 23, 1986",
@@ -34,7 +32,6 @@ const topMovies = [
     {
         movieTitle: "Braidsmaids(2011)",
         director:"Paul Feig",
-        producer: "Judd Apatow, Clayton Townsend, Barry Mendel",
         movieRelease:"May 13, 2011",
         genre: "Comedy, Romance",
         directorDOB: "September 17, 1962",
@@ -45,7 +42,6 @@ const topMovies = [
     {
         movieTitle: "Lady Bird",
         director:"Greta Celeste Gerwig",
-        producer: "Scott Rudin, Eli Rush, Evelyn O'Neill",
         movieRelease:"November 22, 2017",
         genre: "Drama, Comedy",
         directorDOB: "August 4, 1983",
@@ -56,7 +52,6 @@ const topMovies = [
     {
         movieTitle: "Inception(2010)",
         director:"Christopher Nolan",
-        producer: "Christopher Nolan, Emma Thomas",
         movieRelease:"July 16, 2010",
         genre: "Action, Mystery, Thriller, Sci-Fi", // Sci-Fi is science fiction
         directorDOB: "July 30, 1970",
@@ -67,7 +62,6 @@ const topMovies = [
     {
         movieTitle: "Spider-Man: Into the Spider-Verse (2018)",
         director:"Peter Ramsey, Bob Persichetti Jr., Rodney Rothman",
-        producer: "Avi Arad, Amy Pascal, Phil Lord, Chris Miller, Christina Steinberg",
         movieRelease:"December 14, 2018",
         genre: "Animation, Comedy, Fantasy, Kids & Family, Adventure, Action",
         directorDOB: "December 23, 1962, January 17, 1973, Not Available",
@@ -78,7 +72,6 @@ const topMovies = [
     {
         movieTitle: "The Godfather (1972)",
         director:"Francis Ford Coppola",
-        producer: "Albert S. Ruddy",
         movieRelease:"March 15, 1972",
         genre: "Drama, Crime",
         directorDOB: "April 7, 1939",
@@ -89,7 +82,6 @@ const topMovies = [
     {
         movieTitle: "The Lion King(1994)",
         director:"Roger Allers, Rob Minkoff",
-        producer: "Don Hahn",
         movieRelease:"June 24, 1994",
         genre: "Musical, Animation, Adventure, Kids & Family",
         directorDOB: "June 29, 1949, August 11, 1962",
@@ -100,7 +92,6 @@ const topMovies = [
     {
         movieTitle: "The Shining(1980)",
         director:"Stanley Kubrick",
-        producer: "Robert Fryer, Stanley Kubrick",
         movieRelease:"May 23, 1980",
         genre: "Horror, Mystery, Thriller",
         directorDOB: "July, 26, 1928",
@@ -111,7 +102,6 @@ const topMovies = [
     {
         movieTitle: "The Wizard Of Oz (1939)",
         director:"Victor Flemings",
-        producer: "Victor Flemings, Mervyn LeRoy",
         movieRelease:"August 25, 1939",
         genre: "Musical, Fantasy",
         directorDOB: "February 23, 1889",
