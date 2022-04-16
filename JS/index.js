@@ -33,7 +33,7 @@ const topMovies = [
         movieTitle: "Braidsmaids(2011)",
         director:"Paul Feig",
         movieRelease:"May 13, 2011",
-        genre: "Comedy, Romance",
+        genre: "Comedy",
         directorDOB: "September 17, 1962",
         directorPOB: "Mount Clemens, Michigan",   
         directorDOD: "N/A", 
