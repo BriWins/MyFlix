@@ -9,7 +9,7 @@ app.use(morgan("common"));
 app.use(express.static("public"));
 
 const topMovies = [
-    {
+     {
         movieTitle: "Black Panther",
         director: "Ryan Coogler",
         bio:"Ryan Kyle Coogler is an African-American filmmaker and producer who is from Oakland, California.",
@@ -21,18 +21,18 @@ const topMovies = [
         movieInfo:"American superhero film based on the Marvel Comics character, Blank Panther, depicted as the King and protector of the fictional African nation of Wakanda."
     },
     {
-        movieTitle: "Mad Max: Fury Road(2015)",
+        movieTitle: "Mad Max: Fury Road",
         director:"George Miller",
         bio: "George Miller is an Australian film director, screenwriter, producer, and former medical doctor.",
         movieRelease: "March 3, 1945",
         genre: "Adventure",
         directorDOB: "May 23, 1986",
-        directorPOB: "Chinchilla,Queensland, Australia",   
+        directorPOB: "Chinchilla, Queensland, Australia",   
         directorDOD: "N/A", 
         movieInfo:"In a post-apocalyptic desert wasteland, Fury Road follows Max Rockatansky to flee from cult leader Immortan Joe and his army."
     },
     {
-        movieTitle: "Braidsmaids(2011)",
+        movieTitle: "Braidsmaids",
         director:"Paul Feig",
         bio:"Paul Samuel Feig is an American actor, comedian and filmmaker.",
         movieRelease:"May 13, 2011",
@@ -50,11 +50,11 @@ const topMovies = [
         genre: "Comedy",
         directorDOB: "August 4, 1983",
         directorPOB: "Sacramento, California",   
-        directorDOD: "N/a", 
+        directorDOD: "N/A", 
         movieInfo:"A teenager navigates a loving but turbulent relationship with her mother during her eventful senior year of high school."
     },
     {
-        movieTitle: "Inception(2010)",
+        movieTitle: "Inception",
         director:"Christopher Nolan",
         bio:"Christopher Nolan is a British-American film director, producer, and screenwriter.",
         movieRelease:"July 16, 2010",
@@ -65,7 +65,7 @@ const topMovies = [
         movieInfo:"Dom Cobb is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. He is charged with the task of planting an idea in someone's mind. Will he succeed?"
     },
     {
-        movieTitle: "Spider-Man: Into the Spider-Verse (2018)",
+        movieTitle: "Spider-Man: Into the Spider-Verse", //spiderman.png for database
         director:"Peter Ramsey",
         bio:"Peter A. Ramsey is an American illustrator, storyboard artist, story artist, film director, and film producer.",
         movieRelease:"December 14, 2018",
@@ -76,7 +76,7 @@ const topMovies = [
         movieInfo:"A 2018 American computer-animated super hero film featuring the Marvel Comics character, Spider-Man."
     },
     {
-        movieTitle: "The Godfather (1972)",
+        movieTitle: "The Godfather",
         director:"Francis Ford Coppola",
         bio:"Francis Ford Coppola is an American film director, producer, and screenwriter.",
         movieRelease:"March 15, 1972",
@@ -87,7 +87,7 @@ const topMovies = [
         movieInfo:"Highly regarded as one of the greatest films of all time, this movie focuses on the powerful Italian American crime family of Don Vito Corleone. His son relectantly joins the mafia and gets caught in violence and betrayal."
     },
     {
-        movieTitle: "The Lion King(1994)",
+        movieTitle: "The Lion King",
         director:"Rob Minkoff",
         bio:"Robert Ralph (Rob) Minkoff is an American director, screenwriter, producer and animator.",
         movieRelease:"June 24, 1994",
@@ -98,7 +98,7 @@ const topMovies = [
         movieInfo:"A Disney animated feature follows the adventures of the young lion, Simba, the heir of his father, Mufasa. Simba's father is killed by a stampede, but Simba's uncle Scar was behind his father's death. Now an adult, Simba returns home to take back his homeland."
     },
     {
-        movieTitle: "The Shining(1980)",
+        movieTitle: "The Shining",
         director:"Stanley Kubrick",
         bio:"Stanley Kubrick was an American film director, producer, screenwriter, and photographer.",
         movieRelease:"May 23, 1980",
@@ -109,7 +109,7 @@ const topMovies = [
         movieInfo:"A murderer is hell bent on terrorizing Jack Torrance's family as a hotel's dark secrets unravel."
     },
     {
-        movieTitle: "The Wizard Of Oz (1939)",
+        movieTitle: "The Wizard Of Oz",
         director:"Victor Fleming",
         bio:"Victor Lonzo Fleming was an American film director, cinematographer, and producer.",
         movieRelease:"August 25, 1939",
@@ -120,7 +120,7 @@ const topMovies = [
         movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
     },
     {
-      movieTitle: "Gone With The Wind (1939)",
+      movieTitle: "Gone With The Wind",
       director:"Victor Fleming",
       bio:"Victor Lonzo Fleming was an American film director, cinematographer, and producer.",
       movieRelease:"August 25, 1939",
@@ -128,9 +128,8 @@ const topMovies = [
       directorDOB: "February 23, 1889",
       directorPOB: "La Canada, California",   
       directorDOD: "January 6, 1949",
-      movieInfo:"When a cyclone hits, Dorothy is swallowed up by the cyclone and wakes up in the Land of Oz. She follows the Yellow Brick Road to meet the Wizard of Oz meeting many along the way."
+      movieInfo:"The daughter of a Georgia plantation owner conducts a turbulent romance with a roguish profiteer during the American Civil War."
   },
-     
 ]
 
 const users = [{}];
