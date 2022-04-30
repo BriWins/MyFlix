@@ -24,25 +24,72 @@
             </tr>
         </thead>
         <tr>
-            <td>Returns a list of movies</td>
-            <td>/movies</td>
+            <td>Returns myFlix homepage</td>
+            <td>/</td>
             <td>GET</td>
             <td>none</td>
-            <td>A JSON object holding data for all movies</td>
+            <td>A text message displaying homepage greeting</td>
         </tr>
         <tr>
             <td>Allows new user to register myFlix account</td>
             <td>/users/register</td>
             <td>POST</td>
             <td>none</td>
-            <td>A JSON object holding data about new user to add</td>
+            <td>A JSON object holding new user data. Example: <br>
+            {
+                "Username": "newUser123", <br>
+                "Password": "password123", <br>
+                "Email": "newuser@email.com", <br>
+                "Birthdate": "01/01/2000" <br>
+            }
+        </td>
         </tr>
         <tr>
+            <td>Returns a list of movies</td>
+            <td>/movies</td>
+            <td>GET</td>
+            <td>none</td>
+            <td>A JSON object holding data for all movies. Example: <br>
+                <div>
+                { <br>
+                    id:1, <br>
+                    "Title": "Movie Title", <br>
+                    "Description": "Brief summary of movie", <br>
+                    "Genre":  { <br>
+                        "Name": "Comedy", <br>
+                        "Description":"Brief definition of a comedy film" <br>
+                    } <br>
+                    "Director":  { <br>
+                    "Name": "Director Adams", <br>
+                    "Bio": "Brief autobiography of director.", <br>
+                    "Birthdate": "01/01/1950", <br>
+                    "Birthplace": "Houston, Texas", <br>
+                    "Deathdate": "03/01/2010" <br>
+                }<br>
+                    "ImagePath": "movieimage.png", <br>
+                    "Featured": ":true", <br>
+                    "Rating": "9/10", <br>
+                    "Release": "05/16/2016", <br>
+                    "Actors":[ Actor1, Actor2 ]
+                </div>
+            </td>
+        </tr>
+     
+        <tr>
             <td>Allows user to update myFlix account</td>
-            <td>/users/:users</td>
+            <td>/users/:Username</td>
             <td>PUT</td>
             <td>none</td>
-            <td>A text message indicating user account was updated</td>
+            <td>A JSON object holding new data to be entered. Example: <br>
+                <div>
+                {
+                    "Username": "UpdateUser123", <br>
+                    "Password": "updatepassword123", <br>
+                    "Email": "updated@email.com", <br>
+                    "Birthdate": "01/01/2003" <br>
+                }
+                </div>
+                </td>
         </tr>
         <tr>
             <td>Allows user to delete myFlix account</td>
@@ -56,7 +103,7 @@
             <td>/movies/:genres</td>
             <td>GET</td>
             <td>none</td>
-            <td>A JSON object holding data for movies with a specific genre(s)</td>
+            <td>A JSON object holding data for movies with a specific genre</td>
         </tr>
         <tr>
             <td>Allows user to search movies by title</td>
@@ -70,7 +117,7 @@
             <td>/movies/:users/favorites</td>
             <td>POST</td>
             <td>A JSON object containing data about which movie to add to list</td>
-            <td>A text message indicating  movie was added to a user's account </td>
+            <td>A text message indicating movie was added to a user's account </td>
         </tr>
         <tr>
             <td>Allows users to remove movies from a favorites list</td>
@@ -84,30 +131,20 @@
             <td>/movies/directors/:names</td>
             <td>GET</td>
             <td>none</td>
-            <td>A JSON object holding data for a specific movie director(s)</td>
-        </tr>   
-         <tr>
-            <td>Allows user to search movie ratings by title</td>
-            <td>/movies/titles/:ratings</td>
-            <td>GET</td>
-            <td>none</td>
-            <td>A JSON object holding data for a specific movie rating</td>
+            <td>A JSON object holding data for a specific movie director. Example: <br>
+                <div>
+                "Director":  { <br>
+                    "Name": "Director Adams", <br>
+                    "Bio": "Brief autobiography of director.", <br>
+                    "Birthdate": "01/01/1950", <br>
+                    "Birthplace": "Houston, Texas", <br>
+                    "Deathdate": "03/01/2010" <br>
+                }
+                </div>
+            </td>
         </tr>  
-        <tr>
-            <td>Allows user to search movie actors by name</td>
-            <td>/movies/actors/:names</td>
-            <td>GET</td>
-            <td>none</td>
-            <td>A JSON object holding data for a specific movie actors and actresses</td>
-        </tr> 
-        <tr>
-            <td>Allows user to search movie release dates by title</td>
-            <td>/movies/titles/releasedates/:dates</td>
-            <td>GET</td>
-            <td>none</td>
-            <td>A JSON object holding data for a specific movie's release date in theaters</td>
-        </tr> 
     </table>
+
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </body>
 </html>
