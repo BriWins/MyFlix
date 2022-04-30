@@ -208,7 +208,7 @@ app.delete("/movies/:users/favorites", (req, res) => {
 
 //allows user to delete their account
 
-app.delete("/users/unregister/:users", (req, res) => {
+app.delete("/users/unregister/:Username", (req, res) => {
   Users.findOneAndRemove({ Username: req.params.Username })
   .then((user) => {
     if (!user) {
