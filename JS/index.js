@@ -1,3 +1,11 @@
+const mongoose = require("mongoose");
+const Models = require("./models.js");
+
+const Movies = Models.Movie;
+const Users = Models.User;
+
+mongoose.connect("mongodb://localhost:27017/myFlixDB", {useNewUrlParser: true, useUnifiedTopology: true});
+
 const express = require("express"),
 
 morgan = require("morgan");
@@ -10,6 +18,7 @@ app.use(express.static("public"));
 
 const bodyParser = require("body-parser"),
   methodOverride = require("method-override");
+const { restart } = require("nodemon");
 
 app.use(
   bodyParser.urlencoded({
@@ -20,12 +29,11 @@ app.use(
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-app.use(bodyParser.urlencoded({ extended: true}));
+let auth = require('./auth')(app);
 
-let auth = require("./auth")(app);
+const passport = require('passport');
+require('./passport');
 
-const passport = require("passport");
-require("./passport");
 
 ---------------------------------------API URL's and Functions-------------------------------------------------------
 
@@ -37,7 +45,7 @@ app.get("/", passport.authenticate("jwt", { session: false }), (req,res) => {
 
 //allows new user to register an account
 
-app.post("/users/register", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.post("/users/register", (req, res) => {
   Users.findOne({ Username: req.body.Username })
   .then((user) => {
     if (user) {
