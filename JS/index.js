@@ -20,6 +20,13 @@ app.use(
 app.use(bodyParser.json());
 app.use(methodOverride());
 
+app.use(bodyParser.urlencoded({ extended: true}));
+
+let auth = require("./auth")(app);
+
+const passport = require("passport");
+require("./passport");
+
 ---------------------------------------API URL's and Functions-------------------------------------------------------
 
 //returns home page
