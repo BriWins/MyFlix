@@ -74,7 +74,7 @@ app.post("/users/register", (req, res) => {
 
 //function allows user to add movies to favorites list
 
-app.post("/movies/:Username/favorites", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.post("/users/:Username/movies/:MovieID", passport.authenticate("jwt", { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, 
     {
        $push: { Favorites: req.params.MovieID }
@@ -187,7 +187,8 @@ app.put("/users/:Username", passport.authenticate("jwt", { session: false }), (r
         Username: req.body.Username,
         Password: req.body.Password,
         Email: req.body.Email,
-        Birthdate: req.body.Birthdate
+        Birthdate: req.body.Birthdate,
+        Favorites: req.body.Favorites
       }
     },
      { new: true },
@@ -204,23 +205,19 @@ app.put("/users/:Username", passport.authenticate("jwt", { session: false }), (r
 
 //function allows user to remove a movie from favorite list
 
-app.delete("/movies/:Username/favorites", passport.authenticate("jwt", { session: false }), (req, res) => {
-  Users.findOneAndRemove({ Username: req.params.Username },
+app.delete("/users/:Username/movies/:MovieID", passport.authenticate("jwt", { session: false }), (req, res) => {
+  Users.findOneAndUpdate({ Username: req.params.Username }, 
     {
-      $pull: {Favorites: req.params.MovieID }
+       $pull: { Favorites: req.params.MovieID }
     },
-    { new: true},
-    (err,updatedUser) => {
+    { new: true },
+    ( err, updatedUser) => {
       if (err) {
         console.error(err);
         res.status(500).send("Error: " + err);
       } else {
-        res.json(200).send(req.params.MovieID + " was deleted.");
+        res.json(updatedUser);
       }
-    })
-    .catch((err) => {
-      console.error(err);
-      restart.status(500).send("Error: " + err);
     });
 });
 
