@@ -30,6 +30,13 @@
             <td>none</td>
             <td>A text message displaying homepage greeting</td>
         </tr>
+         <tr>
+            <td>Returns myFlix Developer instructions</td>
+            <td>/documentation</td>
+            <td>GET</td>
+            <td>none</td>
+            <td>A text message describing all developer instructions</td>
+        </tr>
         <tr>
             <td>Allows new user to register myFlix account</td>
             <td>/users/register</td>
@@ -41,6 +48,7 @@
                 "Password": "password123", <br>
                 "Email": "newuser@email.com", <br>
                 "Birthdate": "01/01/2000" <br>
+                "Favorites": [ "Movie1", "Movie2"]  //user has option to add movies during registration
             }
         </td>
         </tr>
@@ -86,24 +94,25 @@
                     "Username": "UpdateUser123", <br>
                     "Password": "updatepassword123", <br>
                     "Email": "updated@email.com", <br>
-                    "Birthdate": "01/01/2003" <br>
+                    "Birthdate": "01/01/2003" <br>,
+                    "Favorites": [ "Movie1", "Movie2"]
                 }
                 </div>
                 </td>
         </tr>
         <tr>
             <td>Allows user to delete myFlix account</td>
-            <td>/users/:users</td>
+            <td>/users/:Username/movies/:MovieID</td>
             <td>DELETE</td>
             <td>none</td>
             <td>A text message indicating user account was deleted</td>
         </tr>
         <tr>
-            <td>Allows user to search movies by genre</td>
-            <td>/movies/:genres</td>
+            <td>Allows user to filter movies by genre</td>
+            <td>/movies/genres/:genres</td>
             <td>GET</td>
             <td>none</td>
-            <td>A JSON object holding data for movies with a specific genre</td>
+            <td>A JSON object holding data for all movies with a specific genre</td>
         </tr>
         <tr>
             <td>Allows user to search movies by title</td>
@@ -114,14 +123,14 @@
         </tr>
         <tr>
             <td>Allows users to add movies to a favorites list</td>
-            <td>/movies/:users/favorites</td>
+            <td>/users/:Username/movies/:MovieID</td>
             <td>POST</td>
             <td>A JSON object containing data about which movie to add to list</td>
             <td>A text message indicating movie was added to a user's account </td>
         </tr>
         <tr>
             <td>Allows users to remove movies from a favorites list</td>
-            <td>/movies/:users/favorites</td>
+            <td>/users/:Username/movies/:MovieID</td>
             <td>DELETE</td>
             <td>none</td>
             <td>A text message indicating movie was removed from a user's account </td>
