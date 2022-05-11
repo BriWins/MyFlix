@@ -1,3 +1,4 @@
+//this information was gathered and typed into a notepad before inputing into MongoDB thus reducing and catching syntax errors during process
 
 var movie1 = {
 Title: "Black Panther",
