@@ -147,7 +147,7 @@ app.get("/movies/:titles", passport.authenticate("jwt", { session: false }), (re
 });
 
 
-// function returns list of movies by genre
+// function filters list of movies by genre and displays the movie data
 
 app.get("/movies/genres/:genres", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.find({ "Genre.Name" : req.params.genres })
