@@ -1,6 +1,7 @@
----------------------------Importing Mongoose-------------------------------- 
+---------------------------Importing Modules-------------------------------- 
 
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 ---------------------------Movie Schema-------------------------------- 
 
