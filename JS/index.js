@@ -3,6 +3,7 @@
 const mongoose = require("mongoose");
 const Models = require("./models.js");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const Movies = Models.Movie;
@@ -20,6 +21,19 @@ const { restart } = require("nodemon");
 app.use(bodyParser.urlencoded({ extended: true,}));
 app.use(bodyParser.json());
 app.use(methodOverride());
+
+let allowedOrigins = ["http://localhost:5500", "http://testsite.com"];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){ 
+      let message = "The CORS policy for this application doesn’t allow access from origin" + origin;
+      return callback(new Error(message ), false);
+    }
+    return callback(null, true);
+  }
+}));
 
 let auth = require('./auth')(app);
 
