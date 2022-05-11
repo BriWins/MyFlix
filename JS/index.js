@@ -178,7 +178,7 @@ app.get("/movies/directors/:names", passport.authenticate("jwt", { session: fals
 });
 
 
-//allows user to update their account
+//function allows user to update their account
 
 app.put("/users/:Username", passport.authenticate("jwt", { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username },
