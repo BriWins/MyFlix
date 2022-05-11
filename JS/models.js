@@ -35,7 +35,7 @@ let userSchema = mongoose.Schema({
     Favorites: [String]
 });
 
----------------------------Hashing Passwords-------------------------------- 
+---------------------------Hashing Function-------------------------------- 
 
 userSchema.statics.hashPassword = (password) => {
     return bcrypt.hashSync(password,10);
