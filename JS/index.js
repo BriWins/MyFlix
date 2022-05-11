@@ -45,6 +45,7 @@ app.get("/documentation", (req, res) => {
 //function allows a new user to register
 
 app.post("/users/register", (req, res) => {
+ let hashPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
@@ -52,7 +53,7 @@ app.post("/users/register", (req, res) => {
       } else {
         Users.create({
          Username: req.body.Username,
-         Password: req.body.Password,
+         Password: hashPassword,
          Email: req.body.Email,
          Birthdate: req.body.Birthdate,
          Favorites: req.body.Favorites
