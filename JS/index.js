@@ -58,7 +58,15 @@ app.get("/documentation", (req, res) => {
 
 //function allows a new user to register
 
-app.post("/users/register", (req, res) => {
+app.post("/users/register", 
+ [
+  check("Username", "Username with a minimum of six characters is required").isLength({min: 6}),
+  check("Username", "Username contains non alphanumeric characters- not allowed").isAlphanumeric(),
+  check("Password", "Password is required").not().isEmpty(),
+  check("Password", "Password with a minimum of eight characters is required").isLength({min: 8}),
+  check('Email', 'Email does not appear to be valid').isEmail()
+],        
+(req, res) => {
  let hashPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
