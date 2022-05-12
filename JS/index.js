@@ -60,14 +60,20 @@ app.get("/documentation", (req, res) => {
 
 app.post("/users/register", 
  [
-  check("Username", "Username with a minimum of six characters is required").isLength({min: 6}),
+  check("Username", "Username with a minimum of six characters is required").isLength({min: 6}),       //Validation logic for user registration request
   check("Username", "Username contains non alphanumeric characters- not allowed").isAlphanumeric(),
   check("Password", "Password is required").not().isEmpty(),
   check("Password", "Password with a minimum of eight characters is required").isLength({min: 8}),
   check('Email', 'Email does not appear to be valid').isEmail()
 ],        
 (req, res) => {
- let hashPassword = Users.hashPassword(req.body.Password);
+  
+let errors = validationResult(req);        //checks validation object for errors
+
+if (!errors.isEmpty()) {
+    return res.status(422).json( {errors: errors.array() });
+}
+let hashPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
