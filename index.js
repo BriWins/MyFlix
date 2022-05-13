@@ -136,20 +136,6 @@ app.get("/movies", passport.authenticate("jwt", { session: false }), (req, res) 
 });
 
 
-//function returns list of all registered users FOR DEVELOPER USE!!!
-
-// app.get("/users", passport.authenticate("jwt", { session: false }), (req, res) => {
-//   Users.find()
-//     .then((user) => {
-//       res.status(201).json(user);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.status(500).send("Error: " + err);
-//     });
-// });
-
-
 //function locates a single user by username
 
 app.get("/users/:Username", passport.authenticate("jwt", { session: false }), (req,res) => {
