@@ -18,7 +18,6 @@ Allow users to see which actors star in which movies
 ● Allow users to view information about different actors
 ● Allow users to view more information about different movies, such as the release date and
 the movie rating
-● Allow users to create a “To Watch” list in addition to their “Favorite Movies” list
 
 The API uses the following...
 
