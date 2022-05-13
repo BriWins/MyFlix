@@ -1,9 +1,9 @@
----------------------------Importing Modules-------------------------------- 
+//---------------------------Importing Modules-------------------------------- 
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
----------------------------Movie Schema-------------------------------- 
+//---------------------------Movie Schema-------------------------------- 
 
 let movieSchema = mongoose.Schema({
     Title: { type: String, required: true},
@@ -26,7 +26,7 @@ let movieSchema = mongoose.Schema({
     Actors: [String]
 });
 
----------------------------User Schema-------------------------------- 
+//---------------------------User Schema-------------------------------- 
 
 let userSchema = mongoose.Schema({
     Username: String,
@@ -36,7 +36,7 @@ let userSchema = mongoose.Schema({
     Favorites: [String]
 });
 
----------------------------Hashing Function-------------------------------- 
+//---------------------------Hashing Function-------------------------------- 
 
 userSchema.statics.hashPassword = (password) => {
     return bcrypt.hashSync(password,10);
@@ -46,7 +46,7 @@ userSchema.methods.validatePassword = function(password) {
     return bcrypt.compareSync(password, this.Password);
 };
 
----------------------------Exportation-------------------------------- 
+//---------------------------Exportation-------------------------------- 
 
 let Movie = mongoose.model("Movie", movieSchema);
 let User = mongoose.model("User", userSchema);
