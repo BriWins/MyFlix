@@ -1,4 +1,4 @@
----------------------------------------Middleware/Packages-------------------------------------------------------
+//---------------------------------------Middleware/Packages-------------------------------------------------------
 
 const mongoose = require("mongoose");
 const Models = require("./models.js");
@@ -43,7 +43,7 @@ let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 
----------------------------------------API URL's and Functions-------------------------------------------------------
+//---------------------------------------API URL's and Functions-------------------------------------------------------
 
 //function returns a homepage
 
@@ -270,7 +270,7 @@ app.delete("/users/unregister/:Username", passport.authenticate("jwt", { session
   });
 });
 
----------------------------------------Catching Errors-------------------------------------------------------
+//---------------------------------------Catching Errors-------------------------------------------------------
 
 
 //function to log all errors
@@ -281,7 +281,7 @@ app.use((err, req, res, next) => {
 });
 
 
----------------------------------------Port Connection-------------------------------------------------------
+//---------------------------------------Port Connection-------------------------------------------------------
 const port = process.env.PORT || 5500;
 app.listen(port, "0.0.0.0", () => {
   console.log("Listening on Port " + port);
