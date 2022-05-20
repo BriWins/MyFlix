@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true,}));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-let allowedOrigins = ["http://localhost:5500", "http://testsite.com"];
+let allowedOrigins = ["http://localhost:5500", "http://testsite.com", "http://localhost:1234"];
 
 app.use(cors({
   origin: (origin, callback) => {
