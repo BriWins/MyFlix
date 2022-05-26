@@ -22,7 +22,7 @@ passport.use(new LocalStrategy({
       return callback(error);
     }
 
-     if (!user) {
+    if (!user) {
       console.log('incorrect username');
       return callback(null, false, {message: 'Incorrect username.'});
     }
@@ -31,7 +31,7 @@ passport.use(new LocalStrategy({
       console.log("incorrect password");
       return callback(null, false, {message: "Incorrect password."});
     }
-    
+
     console.log('finished');
     return callback(null, user);
   });
