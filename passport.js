@@ -6,7 +6,7 @@ const passport = require('passport'),
   passportJWT = require('passport-jwt');
 
 
-let Users = Models.users,
+let Users = Models.User,
   JWTStrategy = passportJWT.Strategy,
   ExtractJWT = passportJWT.ExtractJwt;
 
@@ -16,24 +16,24 @@ passport.use(new LocalStrategy({
   passwordField: 'Password'
 }, (username, password, callback) => {
   console.log(username + '  ' + password);
-  Users.findOne({ Username: username }, (error, users) => {
+  Users.findOne({ Username: username }, (error, user) => {
     if (error) {
       console.log(error);
       return callback(error);
     }
 
-    if (!users) {
+    if (!user) {
       console.log('incorrect username');
       return callback(null, false, {message: 'Incorrect username.'});
     }
 
-    if (!users.validatePassword(password)) {
+    if (!user.validatePassword(password)) {
       console.log("incorrect password");
       return callback(null, false, {message: "Incorrect password."});
     }
 
     console.log('finished');
-    return callback(null, users);
+    return callback(null, user);
   });
 }));
 
@@ -43,8 +43,8 @@ passport.use(new JWTStrategy({
   secretOrKey: 'your_jwt_secret'
 }, (jwtPayload, callback) => {
   return Users.findById(jwtPayload._id)
-    .then((users) => {
-      return callback(null, users);
+    .then((user) => {
+      return callback(null, user);
     })
     .catch((error) => {
       return callback(error)
