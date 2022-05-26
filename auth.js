@@ -11,9 +11,9 @@ const jwt = require('jsonwebtoken'),
 require('./passport'); 
 
 //-----------------------------------------JWT Implementation-------------------------------------------------
-let generateJWTToken = (user) => {
-  return jwt.sign(user, jwtSecret, {
-    subject: user.Username,        //The username being encoded during authentication process
+let generateJWTToken = (users) => {
+  return jwt.sign(users, jwtSecret, {
+    subject: users.Username,        //The username being encoded during authentication process
     expiresIn: '7d',              //The token is set to expire in seven days
     algorithm: 'HS256'           //standard algorithm used to encode value of the JWT
   });
@@ -24,19 +24,19 @@ let generateJWTToken = (user) => {
 
 module.exports = (router) => {
   router.post('/login', (req, res) => {
-    passport.authenticate('local', { session: false }, (error, user, info) => {
-      if (error || !user) {
+    passport.authenticate('local', { session: false }, (error, users, info) => {
+      if (error || !users) {
         return res.status(400).json({
           message: 'Something is not right',
-          user: user
+          user: users
         });
       }
-      req.login(user, { session: false }, (error) => {
+      req.login(users, { session: false }, (error) => {
         if (error) {
           res.send(error);
         }
-        let token = generateJWTToken(user.toJSON());
-        return res.json({ user, token });
+        let token = generateJWTToken(users.toJSON());
+        return res.json({ users, token });
       });
     })(req, res);
   });
