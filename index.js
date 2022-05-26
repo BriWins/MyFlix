@@ -2,13 +2,12 @@
 
 const mongoose = require("mongoose");
 const Models = require("./models.js");
+const Movies = Models.movies;
+const Users = Models.users;
 const express = require("express");
 const cors = require("cors");
 const app = express();
 const { check, validationResult } = require("express-validator");
-
-const Movies = Models.Movie;
-const Users = Models.User;
 
 morgan = require("morgan");
 app.use(morgan("common"));
@@ -16,7 +15,7 @@ app.use(express.static("public"));
 
 //mongoose.connect("mongodb://localhost:27017/myFlixDB", {useNewUrlParser: true, useUnifiedTopology: true});
 
-mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect( process.env.CONNECTION_URI , {useNewUrlParser: true, useUnifiedTopology: true});
 
 const bodyParser = require("body-parser"),
 methodOverride = require("method-override");
@@ -78,8 +77,8 @@ if (!errors.isEmpty()) {
 }
 let hashPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
-    .then((user) => {
-      if (user) {
+    .then((users) => {
+      if (users) {
         return res.status(400).send(req.body.Username + "already exists");
       } else {
         Users.create({
@@ -89,7 +88,7 @@ let hashPassword = Users.hashPassword(req.body.Password);
          Birthdate: req.body.Birthdate,
          Favorites: req.body.Favorites
         })
-        .then((user) => {res.status(201).json(user)})
+        .then((users) => {res.status(201).json(users)})
         .catch((error) => {
          console.error(error);
          res.status(500).send("Error: " + error);
@@ -126,8 +125,8 @@ app.post("/users/:Username/movies/:MovieID", passport.authenticate("jwt", { sess
 
 app.get("/movies", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.find()
-    .then((movie) => {
-      res.status(201).json(movie);
+    .then((movies) => {
+      res.status(201).json(movies);
     })
     .catch((err) => {
       console.error(err);
@@ -152,10 +151,10 @@ app.get("/users/:Username", passport.authenticate("jwt", { session: false }), (r
 
 //function allow user to locate movie by Title
 
-app.get("/movies/:titles", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.get("/movies/:titles",  passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.findOne({ Title: req.params.titles })
-  .then((movie) => {
-    res.json(movie);
+  .then((movies) => {
+    res.json(movies);
   })
   .catch((err) => {
     console.error(err);
@@ -168,8 +167,8 @@ app.get("/movies/:titles", passport.authenticate("jwt", { session: false }), (re
 
 app.get("/movies/genres/:genres", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.find({ "Genre.Name" : req.params.genres })
-  .then((movie) => {
-    res.json(movie);
+  .then((movies) => {
+    res.json(movies);
   })
   .catch((err) => {
     console.error(err);
@@ -182,9 +181,9 @@ app.get("/movies/genres/:genres", passport.authenticate("jwt", { session: false 
 
 app.get("/movies/directors/:names", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.findOne({ "Director.Name": req.params.names })
-  .then((movie) => {
-   if (movie) {
-     res.status(200).json(movie.Director);
+  .then((movies) => {
+   if (movies) {
+     res.status(200).json(movies.Director);
    } else {
      res.status(400).send("Director not found.");
    };
@@ -197,7 +196,7 @@ app.get("/movies/directors/:names", passport.authenticate("jwt", { session: fals
 
 //function allows user to update their account
 
-app.put("/users/:Username", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.put("/users/:Username",  passport.authenticate("jwt", { session: false }),  (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username },
     { $set:
       {
@@ -243,8 +242,8 @@ app.delete("/users/:Username/movies/:MovieID", passport.authenticate("jwt", { se
 
 app.delete("/users/unregister/:Username", passport.authenticate("jwt", { session: false }), (req, res) => {
   Users.findOneAndRemove({ Username: req.params.Username })
-    .then((user) => {
-      if (!user) {
+    .then((users) => {
+      if (!users) {
         res.status(400).send( req.params.Username + " was not found");
     } else {
       res.status(200).send( req.params.Username + " was deleted");
