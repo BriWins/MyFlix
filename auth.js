@@ -11,7 +11,6 @@ const jwt = require('jsonwebtoken'),
 require('./passport'); 
 
 //-----------------------------------------JWT Implementation-------------------------------------------------
-
 let generateJWTToken = (user) => {
   return jwt.sign(user, jwtSecret, {
     subject: user.Username,        //The username being encoded during authentication process
