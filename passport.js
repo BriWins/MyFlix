@@ -12,19 +12,19 @@ passport.use(new LocalStrategy({
   passwordField: 'Password'
 }, (username, password, callback) => {
   console.log(username + '  ' + password);
-  Users.findOne({ Username: username }, (error, user) => {
+  Users.findOne({ Username: username }, (error, users) => {
     if (error) {
       console.log(error);
       return callback(error);
     }
 
-    if (!user) {
+    if (!users) {
       console.log('incorrect username');
       return callback(null, false, {message: 'Incorrect username or password.'});
     }
 
     console.log('finished');
-    return callback(null, user);
+    return callback(null, users);
   });
 }));
 
@@ -33,8 +33,8 @@ passport.use(new JWTStrategy({
   secretOrKey: 'your_jwt_secret'
 }, (jwtPayload, callback) => {
   return Users.findById(jwtPayload._id)
-    .then((user) => {
-      return callback(null, user);
+    .then((users) => {
+      return callback(null, users);
     })
     .catch((error) => {
       return callback(error)
