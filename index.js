@@ -104,10 +104,10 @@ let hashPassword = Users.hashPassword(req.body.Password);
 
 //function allows user to add movies to favorites list
 
-app.post("/users/:Username/movies/:MovieID", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.post("/users/:Username/movies/:MovieId", passport.authenticate("jwt", { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, 
     {
-       $push: { Favorites: req.params.MovieID }
+       $push: { Favorites: req.params.MovieId }
     },
     { new: true },
     ( err, updatedUser) => {
@@ -221,10 +221,10 @@ app.put("/users/:Username",  passport.authenticate("jwt", { session: false }),  
 
 //function allows user to remove a movie from favorite list
 
-app.delete("/users/:Username/movies/:MovieID", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.delete("/users/:Username/movies/:MovieId", passport.authenticate("jwt", { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, 
     {
-       $pull: { Favorites: req.params.MovieID }
+       $pull: { Favorites: req.params.MovieId }
     },
     { new: true },
     ( err, updatedUser) => {
