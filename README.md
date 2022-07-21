@@ -2,7 +2,7 @@
 
 ## Objective
 
-The **Flix It Up** server-side component provides registered users wit access to information about different movies, directors, and genres. Users can register an account, update their personal information, and create a list of their favorite movies. 
+The **Flix It Up** server-side component provides registered users with access to information about different movies, directors, and genres. Users can register an account, update their personal information, and create a list of their favorite movies. 
 
 ## Essential Features
 
