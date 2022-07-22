@@ -34,10 +34,10 @@ the movie rating
 - Heroku
 
 
-***NOTE TO PROSPECTIVE EMPLOYERS***
+<!--- ***NOTE TO PROSPECTIVE EMPLOYERS***
 
 ~ This is a project provided by Career Foundry's web development course. I have included a dedicated folder entitled "Employers" for your review. This folder contains behind the scenes planning, preparation, and execution. Thank you!
 
 Respectfully,
 
-Bri
+Bri --->
