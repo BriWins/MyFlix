@@ -4,6 +4,13 @@
 
 The **Flix It Up** server-side component provides registered users with access to information about different movies, directors, and genres. Users can register an account, update their personal information, and create a list of their favorite movies. 
 
+## **_Credits_**
+
+**Primary Stakeholder:** [CAREERFOUNDRY](https://careerfoundry.com/)
+
+**CAREERFOUNDRY Tutor:** [Adam Pagels](https://www.adampagels.com/)
+
+**CAREERFOUNDRY Mentor:** Alfredo Salazar Vélez
 ## Essential Features
 
 - Return a list of ALL movies to the user
